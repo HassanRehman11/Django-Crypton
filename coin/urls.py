@@ -1,0 +1,10 @@
+from django.urls import path
+from coin import views
+from django.conf.urls import url
+urlpatterns = [
+    path('',views.index, name='index'),
+    path('CoinCap',views.coinDetail,name='coinDetail'),
+    path('MoneyEXC',views.moneyEXC,name='moneyEXC'),
+    path('MoneyEXC/excGraph',views.excGraph,name='excGraph'),
+    url(r'^graph/(?P<coin_id>[A-Z]+)/(?P<coin_name>[a-zA-Z]+)/$',views.graph, name='graphDetail'),
+]
