@@ -11,7 +11,7 @@ import pandas
 import bs4 as bs
 import urllib.request
 import datetime
-
+from coin import timec
 
 def index(request):
     return render(request,'index.html')
@@ -47,9 +47,9 @@ def graph(request, coin_id,coin_name):
 
 
 def moneyEXC(request):
-    now = str(datetime.datetime.now())
-    date = ((str(now)).split(' ')[0])
-    url = urllib.request.urlopen("https://www.xe.com/currencytables/?from=USD&date="+str(date))
+    x = timec.time()
+    y = x.date()
+    url = urllib.request.urlopen("https://www.xe.com/currencytables/?from=USD&date="+str(y))
     soup = bs.BeautifulSoup(url, 'lxml')
     data = []
     table = soup.find('table', {"class": "tablesorter"})
@@ -64,9 +64,9 @@ def moneyEXC(request):
 def excGraph(request):
     unit =[]
     code = []
-    now = str(datetime.datetime.now())
-    date = ((str(now)).split(' ')[0])
-    url = urllib.request.urlopen("https://www.xe.com/currencytables/?from=USD&date=" + str(date))
+    x = timec.time()
+    y = x.date()
+    url = urllib.request.urlopen("https://www.xe.com/currencytables/?from=USD&date="+str(y))
     soup = bs.BeautifulSoup(url, 'lxml')
     data = []
     table = soup.find('table', {"class": "tablesorter"})
