@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Crypto Graph</title>
+{% endblock %}
+
+{% block body %}
+{% for d in detail %}
+<div class="container" style="background-color:black">
+  <div class="jumbotron" style="background-color:black;">
+    <h1 style="color:white;">{{d.name}} # {{d.rank}}</h1>
+    <p style="color:white;">Price: {{d.price_usd}}$</p>
+    <p style="color:white;">Market Cap: {{d.market_cap_usd}}$</p>
+    <p style="color:white;">24hrs Change: {{d.percent_change_24h}}%</p>
+  </div>
+</div>
+{% endfor %}
+<div class="container" style="margin:0 auto;width:80%;" >
+    <h1 ><p style="text-align:center">Data Visulaization</p></h1>
+
+    <h1 style="text-align:center;">
+        {% if bokeh_div %}
+            {{bokeh_div|safe}}
+            {{bokeh_script|safe}}
+
+        {% endif %}
+    </h1>
+
+</div>
+
+{% endblock %}
