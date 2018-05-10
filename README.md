@@ -9,7 +9,8 @@ For web scrapping BeautifulSoup is used
 ![Alt text](https://github.com/HassanRehman11/Django-Crypton/blob/master/Screenshots/Screenshot%20from%202018-05-11%2001-04-32.png?raw=true "Title")
 
 ![Alt text](https://github.com/HassanRehman11/Django-Crypton/blob/master/Screenshots/coinMarket.png?raw=true "Title")
-https://github.com/HassanRehman11/Django-Crypton/blob/master/Screenshots/coinMarket.png
+
+![Alt text](https://github.com/HassanRehman11/Django-Crypton/blob/master/Screenshots/Screenshot%20from%202018-05-11%2001-05-14.png?raw=true "Title")
 
 
 ![Alt text](https://github.com/HassanRehman11/Crypton/blob/master/Screenshots/data%20visualization%20of%20btc.PNG?raw=true "Title")
