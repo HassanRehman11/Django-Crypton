@@ -4,16 +4,15 @@
 {% endblock %}
 
 {% block body %}
-{% for d in detail %}
 <div class="container" style="background-color:black">
   <div class="jumbotron" style="background-color:black;">
-    <h1 style="color:white;">{{d.name}} # {{d.rank}}</h1>
-    <p style="color:white;">Price: {{d.price_usd}}$</p>
-    <p style="color:white;">Market Cap: {{d.market_cap_usd}}$</p>
-    <p style="color:white;">24hrs Change: {{d.percent_change_24h}}%</p>
-  </div>
+      <h1 style="color:white;">{{detail.display_name}}</h1>
+        <p style="color:white;">Price: {{detail.price_usd}}$</p>
+        <p style="color:white;">Market Cap: {{detail.market_cap}}$</p>
+        <p style="color:white;">24hrs Change: {{detail.cap24hrChange}}%</p>
+
+      </div>
 </div>
-{% endfor %}
 <div class="container" style="margin:0 auto;width:80%;" >
     <h1 ><p style="text-align:center">Data Visulaization</p></h1>
 
