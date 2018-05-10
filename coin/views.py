@@ -24,10 +24,11 @@ def coinDetail(request):
 
     return render(request,'temp/coindetail.html',{"data":data})
 
-def graph(request, coin_id,coin_name):
+def graph(request, coin_id):
     price = []
     time = []
-    url1 = ' https://api.coinmarketcap.com/v1/ticker/'+str(coin_name)
+
+    url1 = 'http://coincap.io/page/'+str(coin_id)
     datadet = requests.get(url1)
     detail = datadet.json()
     url = 'http://coincap.io/history/365day/'+str(coin_id)
