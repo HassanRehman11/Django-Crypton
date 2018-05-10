@@ -6,5 +6,5 @@ urlpatterns = [
     path('CoinCap',views.coinDetail,name='coinDetail'),
     path('MoneyEXC',views.moneyEXC,name='moneyEXC'),
     path('MoneyEXC/excGraph',views.excGraph,name='excGraph'),
-    url(r'^graph/(?P<coin_id>[A-Z]+)/(?P<coin_name>[a-zA-Z]+)/$',views.graph, name='graphDetail'),
+    url(r'^graph/(?P<coin_id>[A-Za-z0-9]+)$',views.graph, name='graphDetail'),
 ]
