@@ -14,23 +14,48 @@
     <script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.15.min.js"></script>
     <script src="http://cdn.pydata.org/bokeh/release/bokeh-tables-0.12.15.min.js"></script>
     <script src="http://cdn.pydata.org/bokeh/release/bokeh-api-0.12.15.min.js"></script>
+
+
+    <script>
+    $(document).ready(function(){
+        $('.search').on('keyup',function(){
+            var searchTerm = $(this).val().toLowerCase();
+            $('#userTbl tbody tr').each(function(){
+                var lineStr = $(this).text().toLowerCase();
+                if(lineStr.indexOf(searchTerm) === -1){
+                    $(this).hide();
+                }else{
+                    $(this).show();
+                }
+            });
+        });
+    });
+    </script>
+
+
     {% block title %}
     <title>
 		Crypto
 	</title>
     {% endblock %}
    <style type="text/css">
+   {% block styling %}
+
+   {% endblock %}
+
     body, html {
       height: 100%;
       margin: 0 auto;
     }
-
     .border{
 
         height:13%;
         width:100%;
         {% load static %}
         background-image:url({% static 'image/bor1.jpg' %});
+    }
+    .detail:hover{
+
     }
     .navbar-fixed-top {
     min-height: 55px;
@@ -45,6 +70,7 @@
         max-height: 100px;
 
     }
+
 }
 	</style>
 </head>
