@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<title>
+		Crypton
+	</title>
+	<style type="text/css">
+    body, html {
+      height: 100%;
+      margin: 0 auto;
+    }
+
+		.bg{
+	  {% load staticfiles %}
+      background-image: url({% static 'image/walla.jpg' %});
+
+      height: 100%;
+      margin:0 !important;
+    /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .navbar-fixed-top {
+    min-height: 55px;
+    }
+
+  .navbar-fixed-top .navbar-collapse {
+    max-height: 55px;
+  }
+
+  @media (min-width: 768px) {
+    .navbar-fixed-top .navbar-collapse {
+        max-height: 100px;
+    }
+}
+	</style>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" style="margin: 0 !important;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{% url 'index' %}" style="font-size: 35px;margin:0 auto;">coin<span style="font-weight:bold;">Crypton</span></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+
+        <li><a href="{% url 'coinDetail' %}" >Crypto Currency</a></li>
+        <li><a href="{% url 'moneyEXC' %}">Money Exchange</a></li>
+          <li><a href="{% url 'excGraph' %}">Currency Graph</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class='container-fluid bg' style="width: 100%;height: 100%;">
+
+</div>
+
+
+
+
+</body>
+</html>
