@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Crypton-Coin</title>
+{% endblock %}
+
+
+{% block body %}
+{% load custom_tag %}
+<div class="container">
+
+  <h1 align="center" style="padding-bottom:40px;">Coin Market</h1>
+
+  <div class="row">
+  <div class="col-sm-4">
+
+  </div>
+  <div class="col-sm-4" align="right">
+
+    <a class="btn btn-success btn-sm" id="up">
+          <span class="glyphicon glyphicon-chevron-up"></span>
+    </a>
+
+    <a class="btn btn-danger btn-sm" id="down">
+          <span class="glyphicon glyphicon-chevron-down"></span>
+        </a>
+
+  </div>
+  <div class="col-sm-4">
+    <div class="form-group" style="">
+    <input style="" type="text" class="search form-control form-control-lg" placeholder="What you looking for?">
+    </div>
+
+  </div>
+</div>
+
+
+
+
+  <div class="table-responsive" style="padding-top:50px;">
+  <table class="table" id="userTbl">
+    <thead>
+      <tr class="roww">
+
+        <th>Name</th>
+        <th>Market Cap</th>
+        <th>Price</th>
+        <th>Change 24 Hours</th>
+        <th>Volume</th>
+        <th>7 Day Change</th>
+      </tr>
+    </thead>
+    {% for d in data %}
+
+
+
+    <tbody>
+      <tr class="detail">
+        <td><a href="/graph/{{d.short}}"><img alt="No Data Available" src="http://coincap.io/images/coins/{{d.long}}.png" width="40px" height="40px"/>&nbsp;{{d.long}}</a></td>
+        <td>{{d.mktcap}}</td>
+        <td>{{d.price}}</td>
+        {% if d.cap24hrChange >= 0 %}
+        <td class="positive" style="color: green;">{{d.cap24hrChange}}</td>
+        {% else %}
+        <td class="negative" style="color: red;">{{d.cap24hrChange}}</td>
+        {% endif %}
+        <td>{{d.volume}}</td>
+        <td><img width="150px" height="30px" class="img-responsive" onerror="this.style.display='none'"  src="https://images.cryptocompare.com/sparkchart/{{d.short}}/USD/latest.png?ts={{lala}}"></td>
+
+
+      </tr>
+    </tbody>
+    {% endfor %}
+
+
+  </table>
+
+  </div>
+</div>
+
+{% endblock %}
